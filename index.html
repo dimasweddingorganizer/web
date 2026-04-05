@@ -2,18 +2,14 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>Dimas Catering & Wedding Organizer</title>
-
-  <!-- FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Jost&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
+<!-- ── HEADER ── -->
 <header>
   <div class="logo-wrap">
     <span class="logo-top">✦ Est. 2001 ✦</span>
@@ -22,47 +18,417 @@
   </div>
 </header>
 
-<!-- HOME -->
-<div id="home" class="page active">
-  <div class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <h1>Hari Istimewa<br><em>yang Terbaik</em></h1>
-    </div>
+<!-- ── WA FAB ── -->
+<div class="wa-fab-wrap">
+  <div class="wa-contacts" id="waContacts">
+    <a class="wa-contact-btn" href="https://wa.me/6285717604826" target="_blank">
+      <div class="wa-contact-avatar">💬</div>
+      <div class="wa-contact-info">
+        <div class="wa-contact-name">Dimas</div>
+        <div class="wa-contact-role">085717604826</div>
+      </div>
+    </a>
+    <a class="wa-contact-btn" href="https://wa.me/6281807927794" target="_blank">
+      <div class="wa-contact-avatar">💬</div>
+      <div class="wa-contact-info">
+        <div class="wa-contact-name">Fenny</div>
+        <div class="wa-contact-role">081807927794</div>
+      </div>
+    </a>
   </div>
+  <button class="wa-fab" onclick="toggleWA()" aria-label="Hubungi Kami">💬</button>
 </div>
 
-<!-- ANALYZER -->
+<!-- ════════════ HOME ════════════ -->
+<div id="home" class="page active">
+
+  <!-- DARK HERO -->
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-botanical"></div>
+    <div class="hero-content">
+      <div class="hero-year">Sejak 2001</div>
+      <h1>Hari Istimewa<br>Anda Layak<br><em>yang Terbaik</em></h1>
+      <div class="hero-tagline">Catering & Wedding Organizer</div>
+      <div class="ornament">
+        <div class="ornament-line"></div>
+        <span class="ornament-sym">❧</span>
+        <div class="ornament-line"></div>
+      </div>
+      <div class="hero-stats">
+        <div class="h-stat">
+          <div class="h-stat-num">500+</div>
+          <div class="h-stat-label">Event</div>
+        </div>
+        <div class="h-stat">
+          <div class="h-stat-num">3</div>
+          <div class="h-stat-label">Paket</div>
+        </div>
+        <div class="h-stat">
+          <div class="h-stat-num">25+</div>
+          <div class="h-stat-label">Tahun</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-fade"></div>
+
+  <!-- FEATURE CARDS -->
+  <div class="feature-section">
+    <div class="feature-row">
+      <div class="feature-card" onclick="openPage('analyzer')">
+        <span class="f-icon">💐</span>
+        <div class="f-title">Budget Planner</div>
+        <div class="f-sub">Simulasi biaya</div>
+      </div>
+      <div class="feature-card" onclick="openPage('menu')">
+        <span class="f-icon">🍽️</span>
+        <div class="f-title">Pilihan Menu</div>
+        <div class="f-sub">3 paket tersedia</div>
+      </div>
+    </div>
+    <div class="feature-row">
+      <div class="feature-card" onclick="openPage('venue')">
+        <span class="f-icon">🌿</span>
+        <div class="f-title">Pilihan Venue</div>
+        <div class="f-sub">Rumah hingga Ballroom</div>
+      </div>
+      <div class="feature-card" onclick="openPage('analyzer')">
+        <span class="f-icon">✨</span>
+        <div class="f-title">Mulai Sekarang</div>
+        <div class="f-sub">Gratis & mudah</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="promise-strip">
+    <div class="promise-icon">🤍</div>
+    <div class="promise-text">
+      <div class="pt1">Konsultasi Gratis</div>
+      <div class="pt2">Hubungi kami — tanpa biaya, tanpa tekanan</div>
+    </div>
+  </div>
+
+</div><!-- /home -->
+
+<!-- ════════════ ANALYZER ════════════ -->
 <div id="analyzer" class="page">
   <div class="page-inner">
 
+    <div class="sec-heading">
+      <span class="sh-ornament">✦ &nbsp; Budget Planner &nbsp; ✦</span>
+      <h2>Rencanakan <em>Impian</em><br>Pernikahan Anda</h2>
+      <p>Estimasi real-time · Tidak ada tekanan</p>
+    </div>
+
+    <!-- JUMLAH TAMU -->
     <div class="form-section">
       <div class="form-section-header">
-        <span>Jumlah Tamu</span>
-        <span id="guestValHeader">200</span>
+        <div class="fsh-icon">👥</div>
+        <span class="fsh-label">Jumlah Tamu</span>
+        <span class="fsh-val" id="guestValHeader">200</span>
       </div>
-
       <div class="form-section-body">
-        <input type="number" id="guestNumber" value="200" oninput="syncFromNumber()">
-        <input type="range" id="guestSlider" min="50" max="2000" value="200" oninput="syncFromSlider()">
+        <div class="guest-big" id="guestDisplay">200</div>
+        <div class="guest-big-label">tamu undangan</div>
+        <div class="guest-row">
+          <input type="number" class="guest-input" id="guestNumber" value="200" min="50" max="2000" oninput="syncFromNumber()">
+          <input type="range" id="guestSlider" min="50" max="2000" step="10" value="200" oninput="syncFromSlider()">
+        </div>
+        <div class="slider-range"><span>50</span><span>500</span><span>1.000</span><span>2.000</span></div>
       </div>
     </div>
 
-    <button onclick="calculate()">Hitung</button>
+    <!-- PAKET MENU -->
+    <div class="form-section">
+      <div class="form-section-header">
+        <div class="fsh-icon">🍽️</div>
+        <span class="fsh-label">Paket Menu</span>
+        <span class="fsh-val" id="menuValHeader">55rb/pax</span>
+      </div>
+      <div class="form-section-body">
+        <div class="opt-grid-3">
+          <div class="opt-pill active" onclick="selectPkg(this,55000,'55rb/pax')">
+            <div class="op-check">✓</div>
+            <span class="op-icon">🥈</span>
+            <div class="op-name">Silver</div>
+            <div class="op-price">55.000</div>
+          </div>
+          <div class="opt-pill" onclick="selectPkg(this,75000,'75rb/pax')">
+            <div class="op-check">✓</div>
+            <span class="op-icon">🥇</span>
+            <div class="op-name">Gold</div>
+            <div class="op-price">75.000</div>
+          </div>
+          <div class="opt-pill" onclick="selectPkg(this,95000,'95rb/pax')">
+            <div class="op-check">✓</div>
+            <span class="op-icon">💎</span>
+            <div class="op-name">Platinum</div>
+            <div class="op-price">95.000</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <div id="resultCard"></div>
+    <!-- VENUE -->
+    <div class="form-section">
+      <div class="form-section-header">
+        <div class="fsh-icon">🌿</div>
+        <span class="fsh-label">Lokasi Acara</span>
+      </div>
+      <div class="form-section-body">
+        <div class="venue-opt active" onclick="selectVenue(this,5000000)">
+          <span class="vi">🏡</span>
+          <div class="vinfo"><div class="vn">Rumah Pribadi</div><div class="vd">Intimate · Personal</div></div>
+          <div class="vp">Rp 5 jt</div>
+          <div class="venue-radio"></div>
+        </div>
+        <div class="venue-opt" onclick="selectVenue(this,15000000)">
+          <span class="vi">🏢</span>
+          <div class="vinfo"><div class="vn">Gedung Serbaguna</div><div class="vd">Formal · Lengkap</div></div>
+          <div class="vp">Rp 15 jt</div>
+          <div class="venue-radio"></div>
+        </div>
+        <div class="venue-opt" onclick="selectVenue(this,35000000)">
+          <span class="vi">🏨</span>
+          <div class="vinfo"><div class="vn">Hotel Ballroom</div><div class="vd">Premium · Eksklusif</div></div>
+          <div class="vp">Rp 35 jt</div>
+          <div class="venue-radio"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEKORASI -->
+    <div class="form-section">
+      <div class="form-section-header">
+        <div class="fsh-icon">🌸</div>
+        <span class="fsh-label">Dekorasi</span>
+        <span class="fsh-val" id="decoValHeader">Standar</span>
+      </div>
+      <div class="form-section-body">
+        <div class="opt-grid-4">
+          <div class="opt-pill" onclick="selectDeco(this,0,'Tanpa')">
+            <div class="op-check">✓</div>
+            <span class="op-icon" style="font-size:14px;opacity:0.4;">✕</span>
+            <div class="op-name" style="font-size:9px;line-height:1.3;">Tanpa<br>Dekorasi</div>
+            <div class="op-price" style="color:var(--muted);">—</div>
+          </div>
+          <div class="opt-pill active" onclick="selectDeco(this,8000000,'Standar')">
+            <div class="op-check">✓</div>
+            <span class="op-icon">🌿</span>
+            <div class="op-name">Standar</div>
+            <div class="op-price">8 jt</div>
+          </div>
+          <div class="opt-pill" onclick="selectDeco(this,18000000,'Elegan')">
+            <div class="op-check">✓</div>
+            <span class="op-icon">🌸</span>
+            <div class="op-name">Elegan</div>
+            <div class="op-price">18 jt</div>
+          </div>
+          <div class="opt-pill" onclick="selectDeco(this,35000000,'Mewah')">
+            <div class="op-check">✓</div>
+            <span class="op-icon">👑</span>
+            <div class="op-name">Mewah</div>
+            <div class="op-price">35 jt</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADD-ONS -->
+    <div class="form-section">
+      <div class="form-section-header">
+        <div class="fsh-icon">✨</div>
+        <span class="fsh-label">Tambahan Opsional</span>
+      </div>
+      <div class="form-section-body" style="padding-top:4px;padding-bottom:4px;">
+        <div class="addon-row" onclick="toggleAddon(this,'doc',5000000)" data-on="true">
+          <div class="addon-left">
+            <span class="addon-emoji">📷</span>
+            <div><div class="addon-label">Dokumentasi</div><div class="addon-sub">Foto & video profesional</div></div>
+          </div>
+          <div class="addon-right">
+            <span class="addon-price">Rp 5 jt</span>
+            <div class="tog on"><div class="tog-thumb"></div></div>
+          </div>
+        </div>
+        <div class="addon-row" onclick="toggleAddon(this,'ent',4000000)" data-on="true">
+          <div class="addon-left">
+            <span class="addon-emoji">🎵</span>
+            <div><div class="addon-label">Entertainment</div><div class="addon-sub">Live music / MC / hiburan</div></div>
+          </div>
+          <div class="addon-right">
+            <span class="addon-price">Rp 4 jt</span>
+            <div class="tog on"><div class="tog-thumb"></div></div>
+          </div>
+        </div>
+        <div class="addon-row" onclick="toggleAddon(this,'photo',3500000)" data-on="false">
+          <div class="addon-left">
+            <span class="addon-emoji">🖼️</span>
+            <div><div class="addon-label">Photo Booth</div><div class="addon-sub">Setup & cetak instan</div></div>
+          </div>
+          <div class="addon-right">
+            <span class="addon-price">Rp 3,5 jt</span>
+            <div class="tog"><div class="tog-thumb"></div></div>
+          </div>
+        </div>
+        <div class="addon-row" onclick="toggleAddon(this,'souvenir',2500000)" data-on="false">
+          <div class="addon-left">
+            <span class="addon-emoji">🎁</span>
+            <div><div class="addon-label">Souvenir Tamu</div><div class="addon-sub">Per 100 tamu</div></div>
+          </div>
+          <div class="addon-right">
+            <span class="addon-price">Rp 2,5 jt</span>
+            <div class="tog"><div class="tog-thumb"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIVE TOTAL -->
+    <div class="live-bar">
+      <div>
+        <div class="lb-label">Estimasi Sementara</div>
+        <div class="lb-value" id="liveTotal">—</div>
+      </div>
+      <div class="lb-sub" id="liveSub">—</div>
+    </div>
+
+    <button class="calc-btn" onclick="calculate()">Lihat Rincian Lengkap</button>
+
+    <!-- RESULT -->
+    <div class="result-card" id="resultCard">
+      <div class="result-top">
+        <div class="rt-ornament">✦ &nbsp; Total Estimasi &nbsp; ✦</div>
+        <div class="rt-total" id="rTotal">—</div>
+        <div class="rt-sub" id="rSub">—</div>
+      </div>
+      <div class="breakdown" id="breakdownList"></div>
+      <div class="result-bottom">
+        <p>Estimasi bersifat indikatif.<br>Hubungi kami untuk penawaran yang disesuaikan.</p>
+        <button class="wa-btn" onclick="window.open('https://wa.me/6285717604826','_blank')">
+          💬 &nbsp; Diskusi Bersama Kami
+        </button>
+      </div>
+    </div>
 
   </div>
-</div>
+</div><!-- /analyzer -->
 
-<!-- NAV -->
+<!-- ════════════ MENU ════════════ -->
+<div id="menu" class="page">
+
+  <div class="page-header">
+    <h2>Pilihan <em>Menu</em></h2>
+    <p>Tiga paket untuk setiap momen dan anggaran</p>
+  </div>
+
+  <div class="menu-section">
+    <div class="menu-card">
+      <div class="menu-card-head">
+        <div><div class="mc-tier">Silver Package</div><div class="mc-name">Sederhana & Lezat</div></div>
+        <div><div class="mc-price">55.000</div><div class="mc-per">per pax</div></div>
+      </div>
+      <div class="menu-body">
+        <ul>
+          <li><span class="li-bud">❀</span>Nasi Putih</li>
+          <li><span class="li-bud">❀</span>Ayam Bakar Kecap</li>
+          <li><span class="li-bud">❀</span>Mie Goreng Spesial</li>
+          <li><span class="li-bud">❀</span>Sayur Capcay</li>
+          <li><span class="li-bud">❀</span>Air Mineral 600ml</li>
+        </ul>
+      </div>
+      <button class="menu-cta cta-silver" onclick="selectAndGo(55000,'55rb/pax')">Pilih Paket Ini →</button>
+    </div>
+
+    <div class="menu-card">
+      <div class="menu-card-head">
+        <div><div class="mc-tier">Gold Package</div><div class="mc-name">Premium & Istimewa</div></div>
+        <div><div class="mc-price">75.000</div><div class="mc-per">per pax</div></div>
+      </div>
+      <div class="menu-body">
+        <ul>
+          <li><span class="li-bud">❀</span>Nasi Putih</li>
+          <li><span class="li-bud">❀</span>Beef Teriyaki</li>
+          <li><span class="li-bud">❀</span>Ayam Saus Mentega</li>
+          <li><span class="li-bud">❀</span>Cream Soup</li>
+          <li><span class="li-bud">❀</span>Es Buah Segar</li>
+        </ul>
+      </div>
+      <button class="menu-cta cta-gold" onclick="selectAndGo(75000,'75rb/pax')">Pilih Paket Ini →</button>
+    </div>
+
+    <div class="menu-card">
+      <div class="menu-card-head">
+        <div><div class="mc-tier">Platinum Package</div><div class="mc-name">Mewah & Berkesan</div></div>
+        <div><div class="mc-price">95.000</div><div class="mc-per">per pax</div></div>
+      </div>
+      <div class="menu-body">
+        <ul>
+          <li><span class="li-bud">❀</span>Nasi Briyani Rempah</li>
+          <li><span class="li-bud">❀</span>Shortplate BBQ</li>
+          <li><span class="li-bud">❀</span>Salmon Mentai</li>
+          <li><span class="li-bud">❀</span>Live Pasta Station</li>
+          <li><span class="li-bud">❀</span>Dessert Corner</li>
+        </ul>
+      </div>
+      <button class="menu-cta cta-plat" onclick="selectAndGo(95000,'95rb/pax')">Pilih Paket Ini →</button>
+    </div>
+  </div>
+
+</div><!-- /menu -->
+
+<!-- ════════════ VENUE ════════════ -->
+<div id="venue" class="page">
+
+  <div class="page-header">
+    <h2>Pilihan <em>Venue</em></h2>
+    <p>Dari yang intim hingga eksklusif</p>
+  </div>
+
+  <div class="venue-section">
+    <div class="venue-page-card">
+      <div class="vpc-visual vpc-v1">🏡</div>
+      <div class="vpc-body">
+        <div class="vpc-name">Rumah Pribadi</div>
+        <div class="vpc-price-pill">Mulai Rp 5.000.000</div>
+        <div class="vpc-desc">Suasana hangat dan personal di lingkungan yang akrab. Cocok untuk acara intimate dengan nuansa keluarga yang kental.</div>
+        <div class="vpc-tags"><span class="vtag">Fleksibel</span><span class="vtag">Hemat</span><span class="vtag">Intimate</span><span class="vtag">Keluarga</span></div>
+      </div>
+    </div>
+
+    <div class="venue-page-card">
+      <div class="vpc-visual vpc-v2">🏢</div>
+      <div class="vpc-body">
+        <div class="vpc-name">Gedung Serbaguna</div>
+        <div class="vpc-price-pill">Mulai Rp 15.000.000</div>
+        <div class="vpc-desc">Pilihan paling populer. Fasilitas lengkap dengan kapasitas luas, cocok untuk resepsi formal dan semi-formal.</div>
+        <div class="vpc-tags"><span class="vtag">Populer</span><span class="vtag">Kapasitas Besar</span><span class="vtag">AC</span><span class="vtag">Parkir Luas</span></div>
+      </div>
+    </div>
+
+    <div class="venue-page-card">
+      <div class="vpc-visual vpc-v3">🏨</div>
+      <div class="vpc-body">
+        <div class="vpc-name">Hotel Ballroom</div>
+        <div class="vpc-price-pill">Mulai Rp 35.000.000</div>
+        <div class="vpc-desc">Pengalaman pernikahan premium dengan layanan profesional penuh. Dekorasi mewah dan fasilitas hotel bintang lima.</div>
+        <div class="vpc-tags"><span class="vtag">Premium</span><span class="vtag">Full Service</span><span class="vtag">Bintang 5</span><span class="vtag">Eksklusif</span></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /venue -->
+
+<!-- ── BOTTOM NAV ── -->
 <nav class="bottom-nav">
-  <button onclick="openPage('home')">Home</button>
-  <button onclick="openPage('analyzer')">Planner</button>
+  <button class="nav-item active" onclick="openPage('home')" id="nav-home"><span class="nav-icon">🏠</span>Home</button>
+  <button class="nav-item" onclick="openPage('analyzer')" id="nav-analyzer"><span class="nav-icon">💐</span>Planner</button>
+  <button class="nav-item" onclick="openPage('menu')" id="nav-menu"><span class="nav-icon">🍽️</span>Menu</button>
+  <button class="nav-item" onclick="openPage('venue')" id="nav-venue"><span class="nav-icon">🌿</span>Venue</button>
 </nav>
 
-<!-- JS -->
 <script src="script.js"></script>
-
 </body>
 </html>
