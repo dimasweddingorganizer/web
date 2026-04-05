@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dimas Catering & Wedding Organizer</title>
+
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Jost&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="logo-wrap">
+    <span class="logo-top">✦ Est. 2001 ✦</span>
+    <span class="logo-main">Dimas Catering</span>
+    <span class="logo-sub">& Wedding Organizer</span>
+  </div>
+</header>
+
+<!-- HOME -->
+<div id="home" class="page active">
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1>Hari Istimewa<br><em>yang Terbaik</em></h1>
+    </div>
+  </div>
+</div>
+
+<!-- ANALYZER -->
+<div id="analyzer" class="page">
+  <div class="page-inner">
+
+    <div class="form-section">
+      <div class="form-section-header">
+        <span>Jumlah Tamu</span>
+        <span id="guestValHeader">200</span>
+      </div>
+
+      <div class="form-section-body">
+        <input type="number" id="guestNumber" value="200" oninput="syncFromNumber()">
+        <input type="range" id="guestSlider" min="50" max="2000" value="200" oninput="syncFromSlider()">
+      </div>
+    </div>
+
+    <button onclick="calculate()">Hitung</button>
+
+    <div id="resultCard"></div>
+
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="bottom-nav">
+  <button onclick="openPage('home')">Home</button>
+  <button onclick="openPage('analyzer')">Planner</button>
+</nav>
+
+<!-- JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
